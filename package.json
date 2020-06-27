@@ -1,0 +1,29 @@
+{
+  "name": "@athletes.gg/agg-api",
+  "version": "3.0.0-alpha.1",
+  "description": "The API client library for Athletes.gg.",
+  "main": "index.js",
+  "repository": "git@github.com:athletesgg/agg-api",
+  "author": "Athletes.gg, Inc.",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@feathersjs/authentication-client": "^4.5.4",
+    "@feathersjs/feathers": "^4.5.3",
+    "@feathersjs/socketio-client": "^4.5.4",
+    "debug": "^4.1.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.27.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-sort-destructure-keys": "^1.3.5",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "jest-junit": "^11.0.1",
+    "lint-staged": "^10.2.11",
+    "typescript": "^3.9.5"
+  }
+}
