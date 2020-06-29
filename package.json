@@ -17,13 +17,28 @@
     "socket.io-client": "^2.3.0"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.3",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "codecov": "^3.7.0",
     "eslint": "^7.3.1",
-    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-jest": "^23.17.1",
     "eslint-plugin-sort-destructure-keys": "^1.3.5",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "jest-junit": "^11.0.1",
     "lint-staged": "^10.2.11",
+    "ts-jest": "^26.1.1",
     "typescript": "^3.9.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn jest src --coverage"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --cache --fix"
+    ]
   }
 }

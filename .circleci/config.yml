@@ -1,0 +1,44 @@
+---
+
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run: yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run:
+          command: >-
+            yarn eslint
+            --format junit
+            -o reports/junit/js-lint-results.xml
+          when: always
+      - run:
+          command: >-
+            yarn jest
+            src
+            --ci
+            --runInBand
+            --reporters="default"
+            --reporters="jest-junit"
+            --coverage
+          environment:
+            JEST_JUNIT_OUTPUT_DIR: "./reports/junit"
+          when: always
+      - store_test_results:
+          path: reports/junit
+      - store_artifacts:
+          path: reports/junit
+      - store_artifacts:
+          path: coverage
+      - run:
+          command: yarn codecov
+          when: always
+
