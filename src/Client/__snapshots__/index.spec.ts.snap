@@ -2,6 +2,8 @@
 
 exports[`Client should initialize a basic client 1`] = `
 Client {
+  "_timeout": 3000,
+  "_url": "https://api-v3.athletes.gg",
   "app": Object {
     "_events": undefined,
     "_eventsCount": 0,
@@ -126,7 +128,5 @@ Client {
       "_socketMock": [Circular],
     },
   },
-  "timeout": 3000,
-  "url": "https://api-v3.athletes.gg",
 }
 `;

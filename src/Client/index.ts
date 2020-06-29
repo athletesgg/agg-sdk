@@ -15,10 +15,10 @@ interface ClientOptions {
 class Client implements ClientOptions {
   static DEFAULT_TIMEOUT = 3000
 
-  app: feathers.Application
-  socket: SocketIOClient.Socket
-  timeout: number
-  url: string
+  readonly app: feathers.Application
+  readonly socket: SocketIOClient.Socket
+  private _timeout: number
+  private _url: string
 
   constructor(options: ClientOptions) {
     const {
@@ -27,19 +27,27 @@ class Client implements ClientOptions {
       url,
     } : ClientOptions = options
 
-    this.url = url
-    this.socket = io(this.url)
-    this.timeout = timeout
+    this._url = url
+    this.socket = io(this._url)
+    this._timeout = timeout
 
     this.app = feathers()
     this.app
       .configure(socketio(this.socket, {
-        timeout: this.timeout,
+        timeout: this._timeout,
       }))
       .configure(authentication({
         path: '/authentication',
         storage,
       }))
+  }
+
+  get timeout(): number {
+    return this._timeout
+  }
+
+  get url(): string {
+    return this._url
   }
 }
 
