@@ -32,12 +32,17 @@ jobs:
           environment:
             JEST_JUNIT_OUTPUT_DIR: "./reports/junit"
           when: always
+      - run:
+          command: yarn build
+          when: always
       - store_test_results:
           path: reports/junit
       - store_artifacts:
           path: reports/junit
       - store_artifacts:
           path: coverage
+      - store_artifacts:
+          path: dist
       - run:
           command: yarn codecov
           when: always
