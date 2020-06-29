@@ -2,11 +2,19 @@
   "name": "@athletes.gg/agg-api",
   "version": "3.0.0-alpha.1",
   "description": "The API client library for Athletes.gg.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "repository": "git@github.com:athletesgg/agg-api",
   "author": "Athletes.gg, Inc.",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "build": "tsc",
+    "prepare": "yarn run build"
+  },
   "dependencies": {
     "@feathersjs/authentication-client": "^4.5.4",
     "@feathersjs/feathers": "^4.5.3",

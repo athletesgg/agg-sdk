@@ -4,3 +4,4 @@ npm-debug*
 coverage
 .eslintcache
 package-lock.json
+dist
