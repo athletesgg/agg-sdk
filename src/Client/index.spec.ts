@@ -7,7 +7,18 @@ jest.mock('socket.io-client', () => (): SocketIOClient.Socket => {
   /* eslint-disable */
   const MockedSocket = require('socket.io-mock')
 
-  return <SocketIOClient.Socket>(new MockedSocket())
+  const socket = <SocketIOClient.Socket>(new MockedSocket())
+  socket.io = <SocketIOClient.Manager>{
+    timeout(timeout?: number): SocketIOClient.Manager | number {
+      if (!timeout) {
+        return 1989
+      }
+
+      return this
+    }
+  }
+
+  return socket
   /* eslint-enable */
 })
 
@@ -24,5 +35,18 @@ describe('Client', () => {
     expect(client.app.get('storage').storage).toEqual(defaultStorage)
     expect(client.timeout).toEqual(Client.DEFAULT_TIMEOUT)
     expect(client).toMatchSnapshot()
+  })
+
+  it('should change sio timeout', () => {
+    const timeout = 1989
+
+    const client = new Client({
+      url: 'https://taylorswift.com/api',
+    })
+
+    expect(client.timeout).toEqual(Client.DEFAULT_TIMEOUT)
+
+    client.timeout = timeout
+    expect(client.timeout).toEqual(timeout)
   })
 })

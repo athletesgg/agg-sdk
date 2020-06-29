@@ -46,6 +46,12 @@ class Client implements ClientOptions {
     return this._timeout
   }
 
+  set timeout(timeout: number) {
+    this.socket.io.timeout(timeout)
+
+    this._timeout = timeout
+  }
+
   get url(): string {
     return this._url
   }

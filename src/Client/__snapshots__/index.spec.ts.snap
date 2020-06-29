@@ -63,6 +63,9 @@ Client {
         "to": [Function],
       },
       "generalCallbacks": Object {},
+      "io": Object {
+        "timeout": [Function],
+      },
       "joinedRooms": Array [],
       "rooms": Array [],
       "socketClient": e {
@@ -121,6 +124,9 @@ Client {
       "to": [Function],
     },
     "generalCallbacks": Object {},
+    "io": Object {
+      "timeout": [Function],
+    },
     "joinedRooms": Array [],
     "rooms": Array [],
     "socketClient": e {
