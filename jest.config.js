@@ -4,4 +4,8 @@ module.exports = {
     'jest-localstorage-mock',
   ],
   testEnvironment: 'node',
+  testPathIgnorePatterns: [
+    'node_modules',
+    'dist',
+  ],
 }

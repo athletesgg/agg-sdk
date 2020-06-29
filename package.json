@@ -12,7 +12,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "prepare": "yarn run build"
   },
   "dependencies": {
@@ -44,7 +44,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn jest src --coverage"
+      "pre-commit": "lint-staged && yarn jest src --coverage && yarn build"
     }
   },
   "lint-staged": {
