@@ -22,6 +22,7 @@ describe('Client', () => {
     expect(client.url).toEqual(url)
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     expect(client.app.get('storage').storage).toEqual(defaultStorage)
+    expect(client.timeout).toEqual(Client.DEFAULT_TIMEOUT)
     expect(client).toMatchSnapshot()
   })
 })

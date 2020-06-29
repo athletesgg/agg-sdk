@@ -126,6 +126,7 @@ Client {
       "_socketMock": [Circular],
     },
   },
+  "timeout": 3000,
   "url": "https://api-v3.athletes.gg",
 }
 `;
