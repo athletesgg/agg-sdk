@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Client should initialize a basic client 1`] = `
+Client {
+  "app": Object {
+    "_events": undefined,
+    "_eventsCount": 0,
+    "_maxListeners": undefined,
+    "_setup": false,
+    "addListener": [Function],
+    "authenticate": [Function],
+    "authentication": AuthenticationClient {
+      "app": [Circular],
+      "authenticated": false,
+      "options": Object {
+        "Authentication": [Function],
+        "header": "Authorization",
+        "jwtStrategy": "jwt",
+        "locationErrorKey": "error",
+        "locationKey": "access_token",
+        "path": "/authentication",
+        "scheme": "Bearer",
+        "storage": MemoryStorage {
+          "store": Object {},
+        },
+        "storageKey": "feathers-jwt",
+      },
+    },
+    "configure": [Function],
+    "defaultService": [Function],
+    "disable": [Function],
+    "disabled": [Function],
+    "emit": [Function],
+    "enable": [Function],
+    "enabled": [Function],
+    "eventMappings": Object {
+      "create": "created",
+      "patch": "patched",
+      "remove": "removed",
+      "update": "updated",
+    },
+    "eventNames": [Function],
+    "get": [Function],
+    "getMaxListeners": [Function],
+    "hookTypes": Array [
+      "before",
+      "after",
+      "error",
+      "finally",
+    ],
+    "hooks": [Function],
+    "init": [Function],
+    "io": e {
+      "_callbacks": Object {
+        "$disconnect": Array [
+          [Function],
+        ],
+      },
+      "_emitFn": [Function],
+      "broadcast": Object {
+        "to": [Function],
+      },
+      "generalCallbacks": Object {},
+      "joinedRooms": Array [],
+      "rooms": Array [],
+      "socketClient": e {
+        "_emitFn": [Function],
+        "_socketMock": [Circular],
+      },
+    },
+    "listenerCount": [Function],
+    "listeners": [Function],
+    "logout": [Function],
+    "methods": Array [
+      "find",
+      "get",
+      "create",
+      "update",
+      "patch",
+      "remove",
+    ],
+    "mixins": Array [
+      [Function],
+      [Function],
+    ],
+    "off": [Function],
+    "on": [Function],
+    "once": [Function],
+    "prependListener": [Function],
+    "prependOnceListener": [Function],
+    "providers": Array [],
+    "rawListeners": [Function],
+    "reAuthenticate": [Function],
+    "removeAllListeners": [Function],
+    "removeListener": [Function],
+    "service": [Function],
+    "services": Object {},
+    "set": [Function],
+    "setMaxListeners": [Function],
+    "settings": Object {
+      "storage": StorageWrapper {
+        "storage": MemoryStorage {
+          "store": Object {},
+        },
+      },
+    },
+    "setup": [Function],
+    "use": [Function],
+    "version": "4.5.3",
+  },
+  "socket": e {
+    "_callbacks": Object {
+      "$disconnect": Array [
+        [Function],
+      ],
+    },
+    "_emitFn": [Function],
+    "broadcast": Object {
+      "to": [Function],
+    },
+    "generalCallbacks": Object {},
+    "joinedRooms": Array [],
+    "rooms": Array [],
+    "socketClient": e {
+      "_emitFn": [Function],
+      "_socketMock": [Circular],
+    },
+  },
+  "url": "https://api-v3.athletes.gg",
+}
+`;

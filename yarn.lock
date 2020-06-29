@@ -660,7 +660,7 @@
   resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.0.1.tgz#b6e98083f13faa1e5231bfa3bdb1b0feff536b6d"
   integrity sha512-boy4xPNEtiw6N3abRhBi/e7hNvy3Tt8E9ZRAQrwAGzoCGZS/1wjo9KY7JHhnfnEsG5wSjDbymCozUM9a3ea7OQ==
 
-"@types/socket.io-client@^1.4.32":
+"@types/socket.io-client@^1.4.32", "@types/socket.io-client@^1.4.33":
   version "1.4.33"
   resolved "https://registry.yarnpkg.com/@types/socket.io-client/-/socket.io-client-1.4.33.tgz#8e705b9b3f7fba6cb329d27cd2eda222812adbf1"
   integrity sha512-m4LnxkljsI9fMsjwpW5QhRpMixo2BeeLpFmg0AE+sS4H1pzAd/cs/ftTiL60FLZgfFa8PFRPx5KsHu8O0bADKQ==
@@ -1323,7 +1323,7 @@ component-emitter@1.2.1:
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
   integrity sha1-E3kY1teCg/ffemt8WmPhQOaUJeY=
 
-component-emitter@^1.2.1, component-emitter@~1.3.0:
+component-emitter@^1.2.1, component-emitter@^1.3.0, component-emitter@~1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.3.0.tgz#16e4070fba8ae29b679f2215853ee181ab2eabc0"
   integrity sha512-Rd3se6QB+sO1TwqZjscQrurpEPIfO0/yYnSin6Q/rD3mOutHvUrCAhJub3r90uNb+SESBuE0QYoB90YdfatsRg==
@@ -2685,6 +2685,11 @@ jest-leak-detector@^26.1.0:
   dependencies:
     jest-get-type "^26.0.0"
     pretty-format "^26.1.0"
+
+jest-localstorage-mock@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/jest-localstorage-mock/-/jest-localstorage-mock-2.4.2.tgz#31dd2916713eed3b8703196f60ec85ffd50c1a23"
+  integrity sha512-bywlhvs7RM2vpZ0EN12XOU5C2WAXRUbxl1VOxel4cqRUHD6zaUmh99UzwOTx0fWuqjfd0y/NDvEbewNaJaz+UQ==
 
 jest-matcher-utils@^26.1.0:
   version "26.1.0"
@@ -4087,6 +4092,13 @@ socket.io-client@^2.3.0:
     parseuri "0.0.5"
     socket.io-parser "~3.3.0"
     to-array "0.1.4"
+
+socket.io-mock@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/socket.io-mock/-/socket.io-mock-1.2.4.tgz#d426b47d829bd9d6b12d4b8bf0687301ae966c62"
+  integrity sha512-pOoqM7CiOq3ybfokiPUA2afTfLTh/M1MjeTvTh+j+gGEgZzA+XfzdfiLJXKIo7pdkI+ASjRXNBAdvKuagrQQzw==
+  dependencies:
+    component-emitter "^1.3.0"
 
 socket.io-parser@~3.3.0:
   version "3.3.0"

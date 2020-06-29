@@ -9,6 +9,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitUseStrict": false,
     "noStrictGenericChecks": false,
@@ -16,6 +17,7 @@
     "noUnusedParameters": true,
     "removeComments": true,
     "resolveJsonModule": true,
+    "sourceMap": true,
     "strict": true,
     "target": "esnext"
   },
