@@ -27,7 +27,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.3",
     "@types/socket.io-client": "^1.4.33",
-    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
     "@typescript-eslint/parser": "^3.4.0",
     "codecov": "^3.7.0",
     "eslint": "^7.3.1",
