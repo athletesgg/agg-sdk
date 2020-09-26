@@ -52,7 +52,7 @@ Client {
     ],
     "hooks": [Function],
     "init": [Function],
-    "io": e {
+    "io": SocketMock {
       "_callbacks": Object {
         "$disconnect": Array [
           [Function],
@@ -68,9 +68,11 @@ Client {
       },
       "joinedRooms": Array [],
       "rooms": Array [],
-      "socketClient": e {
+      "socketClient": SocketClient {
         "_emitFn": [Function],
         "_socketMock": [Circular],
+        "connected": true,
+        "disconnected": false,
       },
     },
     "listenerCount": [Function],
@@ -111,9 +113,9 @@ Client {
     },
     "setup": [Function],
     "use": [Function],
-    "version": "4.5.3",
+    "version": "4.5.8",
   },
-  "socket": e {
+  "socket": SocketMock {
     "_callbacks": Object {
       "$disconnect": Array [
         [Function],
@@ -129,9 +131,11 @@ Client {
     },
     "joinedRooms": Array [],
     "rooms": Array [],
-    "socketClient": e {
+    "socketClient": SocketClient {
       "_emitFn": [Function],
       "_socketMock": [Circular],
+      "connected": true,
+      "disconnected": false,
     },
   },
 }
