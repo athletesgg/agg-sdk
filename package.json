@@ -39,7 +39,7 @@
     "jest-localstorage-mock": "^2.4.3",
     "lint-staged": "^10.4.0",
     "socket.io-mock": "^1.3.1",
-    "ts-jest": "^26.4.0",
+    "ts-jest": "^26.4.3",
     "typescript": "^4.0.3"
   },
   "husky": {
