@@ -113,7 +113,7 @@ Client {
     },
     "setup": [Function],
     "use": [Function],
-    "version": "4.5.8",
+    "version": "4.5.10",
   },
   "socket": SocketMock {
     "_callbacks": Object {
