@@ -19,8 +19,22 @@ class Client implements ClientOptions {
   readonly socket: SocketIOClient.Socket
   private _timeout: number
   private _url: string
+  public authenticate
+  public authManagement: feathers.Service<any>
+  public activities: feathers.Service<any>
+  public characters: feathers.Service<any>
+  public events: feathers.Service<any>
+  public featured: feathers.Service<any>
+  public followers: feathers.Service<any>
+  public images: feathers.Service<any>
+  public games: feathers.Service<any>
+  public matches: feathers.Service<any>
+  public notifications: feathers.Service<any>
+  public placings: feathers.Service<any>
+  public schedules: feathers.Service<any>
+  public users: feathers.Service<any>
 
-  constructor(options: ClientOptions) {
+  public constructor(options: ClientOptions) {
     const {
       storage = defaultStorage,
       timeout = Client.DEFAULT_TIMEOUT,
@@ -40,20 +54,39 @@ class Client implements ClientOptions {
         path: '/authentication',
         storage,
       }))
+
+    this.authenticate = this.app.authenticate
+    this.authManagement = this.getService('authManagement')
+    this.activities = this.getService('activities')
+    this.characters = this.getService('characters')
+    this.events = this.getService('events')
+    this.featured = this.getService('featured')
+    this.followers = this.getService('followers')
+    this.images = this.getService('images')
+    this.games = this.getService('games')
+    this.matches = this.getService('matches')
+    this.notifications = this.getService('notifications')
+    this.placings = this.getService('placings')
+    this.schedules = this.getService('schedules')
+    this.users = this.getService('users')
   }
 
-  get timeout(): number {
+  public get timeout(): number {
     return this._timeout
   }
 
-  set timeout(timeout: number) {
+  public set timeout(timeout: number) {
     this.socket.io.timeout(timeout)
 
     this._timeout = timeout
   }
 
-  get url(): string {
+  public get url(): string {
     return this._url
+  }
+
+  private getService(service: string): feathers.Service<any> {
+    return this.app.service(service) as feathers.Service<any>
   }
 }
 
