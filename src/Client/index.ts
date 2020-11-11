@@ -1,4 +1,7 @@
-import feathers from '@feathersjs/feathers'
+import feathers, {
+  Application,
+  Service,
+} from '@feathersjs/feathers'
 import type {
   AuthenticationRequest,
   AuthenticationResult,
@@ -19,25 +22,25 @@ interface ClientOptions {
 class Client implements ClientOptions {
   static DEFAULT_TIMEOUT = 3000
 
-  readonly app: feathers.Application
+  readonly app: Application
   readonly socket: SocketIOClient.Socket
 
   private _timeout: number
   private _url: string
 
-  public authManagement: feathers.Service<any>
-  public activities: feathers.Service<any>
-  public characters: feathers.Service<any>
-  public events: feathers.Service<any>
-  public featured: feathers.Service<any>
-  public followers: feathers.Service<any>
-  public images: feathers.Service<any>
-  public games: feathers.Service<any>
-  public matches: feathers.Service<any>
-  public notifications: feathers.Service<any>
-  public placings: feathers.Service<any>
-  public schedules: feathers.Service<any>
-  public users: feathers.Service<any>
+  public authManagement: Service<any>
+  public activities: Service<any>
+  public characters: Service<any>
+  public events: Service<any>
+  public featured: Service<any>
+  public followers: Service<any>
+  public images: Service<any>
+  public games: Service<any>
+  public matches: Service<any>
+  public notifications: Service<any>
+  public placings: Service<any>
+  public schedules: Service<any>
+  public users: Service<any>
 
   public constructor(options: ClientOptions) {
     const {
@@ -75,8 +78,8 @@ class Client implements ClientOptions {
     this.users = this.getService('users')
   }
 
-  private getService(service: string): feathers.Service<any> {
-    return this.app.service(service) as feathers.Service<any>
+  private getService(service: string): Service<any> {
+    return this.app.service(service) as Service<any>
   }
 
   public get timeout(): number {
@@ -99,6 +102,11 @@ class Client implements ClientOptions {
 
   public async logout(): Promise<AuthenticationResult | null> {
     return this.app.logout()
+  }
+
+  // GET
+  public async getUser(userId: string): Promise<Record<string, unknown>> {
+    return this.users.get(userId) as Promise<Record<string, unknown>>
   }
 }
 
