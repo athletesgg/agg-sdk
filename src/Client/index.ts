@@ -1,5 +1,6 @@
 import feathers, {
   Application,
+  Query,
   Service,
 } from '@feathersjs/feathers'
 import type {
@@ -107,6 +108,12 @@ class Client implements ClientOptions {
   // GET
   public async getUser(userId: string): Promise<Record<string, unknown>> {
     return this.users.get(userId) as Promise<Record<string, unknown>>
+  }
+
+  public async getUsers(query: Query): Promise<Record<string, unknown>[]> {
+    return this.users.find({
+      query,
+    }) as Promise<Record<string, unknown>[]>
   }
 }
 
