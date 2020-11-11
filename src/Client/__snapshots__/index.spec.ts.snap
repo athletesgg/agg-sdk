@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Client should fail to login (no cached credentials) 1`] = `"No accessToken found in storage"`;
+
+exports[`Client should fail to login (timeout) 1`] = `"Timeout of 3000ms exceeded calling create on authentication"`;
+
+exports[`Client should fail to logout (timeout) 1`] = `"Timeout of 3000ms exceeded calling remove on authentication"`;
+
 exports[`Client should initialize a basic client 1`] = `
 Client {
   "_timeout": 3000,
@@ -1331,7 +1337,6 @@ Client {
     "timeout": 3000,
     "update": [Function],
   },
-  "authenticate": [Function],
   "characters": Object {
     "addListener": [Function],
     "connection": SocketMock {

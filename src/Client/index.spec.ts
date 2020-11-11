@@ -49,4 +49,31 @@ describe('Client', () => {
     client.timeout = timeout
     expect(client.timeout).toEqual(timeout)
   })
+
+  it('should fail to login (no cached credentials)', async () => {
+    const client = new Client({
+      url: 'https://taylorswift.com/api',
+    })
+
+    await expect(client.login()).rejects.toThrowErrorMatchingSnapshot()
+  })
+
+  it('should fail to login (timeout)', async () => {
+    const client = new Client({
+      url: 'https://taylorswift.com/api',
+    })
+
+    await expect(client.login({
+      password: 'tayloriscool13',
+      username: 'betty',
+    })).rejects.toThrowErrorMatchingSnapshot()
+  })
+
+  it('should fail to logout (timeout)', async () => {
+    const client = new Client({
+      url: 'https://taylorswift.com/api',
+    })
+
+    await expect(client.logout()).rejects.toThrowErrorMatchingSnapshot()
+  })
 })

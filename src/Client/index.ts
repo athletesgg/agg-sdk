@@ -1,4 +1,8 @@
 import feathers from '@feathersjs/feathers'
+import type {
+  AuthenticationRequest,
+  AuthenticationResult,
+} from '@feathersjs/authentication'
 import authentication, {
   Storage,
   defaultStorage,
@@ -17,9 +21,10 @@ class Client implements ClientOptions {
 
   readonly app: feathers.Application
   readonly socket: SocketIOClient.Socket
+
   private _timeout: number
   private _url: string
-  public authenticate
+
   public authManagement: feathers.Service<any>
   public activities: feathers.Service<any>
   public characters: feathers.Service<any>
@@ -55,7 +60,6 @@ class Client implements ClientOptions {
         storage,
       }))
 
-    this.authenticate = this.app.authenticate
     this.authManagement = this.getService('authManagement')
     this.activities = this.getService('activities')
     this.characters = this.getService('characters')
@@ -69,6 +73,10 @@ class Client implements ClientOptions {
     this.placings = this.getService('placings')
     this.schedules = this.getService('schedules')
     this.users = this.getService('users')
+  }
+
+  private getService(service: string): feathers.Service<any> {
+    return this.app.service(service) as feathers.Service<any>
   }
 
   public get timeout(): number {
@@ -85,8 +93,12 @@ class Client implements ClientOptions {
     return this._url
   }
 
-  private getService(service: string): feathers.Service<any> {
-    return this.app.service(service) as feathers.Service<any>
+  public async login(credentials?: AuthenticationRequest): Promise<AuthenticationResult> {
+    return this.app.authenticate(credentials)
+  }
+
+  public async logout(): Promise<AuthenticationResult | null> {
+    return this.app.logout()
   }
 }
 
