@@ -126,6 +126,16 @@ class Client implements ClientOptions {
     }) as Promise<Record<string, unknown>[]>
   }
 
+  public async getMatch(id: string): Promise<Record<string, unknown>> {
+    return this.matches.get(id) as Promise<Record<string, unknown>>
+  }
+
+  public async getMatches(query: Query): Promise<Record<string, unknown>[]> {
+    return this.matches.find({
+      query,
+    }) as Promise<Record<string, unknown>[]>
+  }
+
   public async getUser(id: string): Promise<Record<string, unknown>> {
     return this.users.get(id) as Promise<Record<string, unknown>>
   }

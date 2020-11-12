@@ -57,4 +57,19 @@ describe('Client', () => {
 
     expect(characters).toMatchSnapshot()
   })
+
+  it('should get Ninjakilla vs SonicFox', async () => {
+    const match: Record<string, unknown> =
+      await client.getMatch('5de93b6186c0e40017c54ca8')
+
+    expect(match).toMatchSnapshot()
+  })
+
+  it('should get 5 matches', async () => {
+    const matches: Record<string, unknown>[] = await client.getMatches({
+      $limit: 5,
+    })
+
+    expect(matches).toMatchSnapshot()
+  })
 })
