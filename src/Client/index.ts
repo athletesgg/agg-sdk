@@ -106,8 +106,18 @@ class Client implements ClientOptions {
   }
 
   // GET
-  public async getUser(userId: string): Promise<Record<string, unknown>> {
-    return this.users.get(userId) as Promise<Record<string, unknown>>
+  public async getGame(id: string): Promise<Record<string, unknown>> {
+    return this.games.get(id) as Promise<Record<string, unknown>>
+  }
+
+  public async getGames(query: Query): Promise<Record<string, unknown>[]> {
+    return this.games.find({
+      query,
+    }) as Promise<Record<string, unknown>[]>
+  }
+
+  public async getUser(id: string): Promise<Record<string, unknown>> {
+    return this.users.get(id) as Promise<Record<string, unknown>>
   }
 
   public async getUsers(query: Query): Promise<Record<string, unknown>[]> {

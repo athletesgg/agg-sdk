@@ -1,5 +1,126 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Client should get 5 games 1`] = `
+Array [
+  Object {
+    "_id": "5843c579b07a244d5aab0d1b",
+    "aggScore": 2447,
+    "box": "https://res.cloudinary.com/agg/image/upload/v1586458537/u1oybj4io5kuaquklhbs.png",
+    "cover": "https://res.cloudinary.com/agg/image/upload/v1543095582/ssb4-cover_e8ezup.jpg",
+    "createdAt": 1480836473,
+    "isPublic": true,
+    "logo": "https://athletes.gg/images/games/logo/super-smash-bros-for-wii-u.jpg",
+    "name": "Super Smash Bros. for Wii U",
+    "reddit": Array [
+      Object {
+        "flairs": Array [
+          "All",
+          "Smash 4",
+        ],
+        "subreddit": "smashbros",
+      },
+    ],
+    "slug": "super-smash-bros-for-wii-u",
+    "smashggId": 3,
+    "twitchId": "488353",
+    "updatedAt": 1588704303,
+    "youtubeId": "UCF0DyHnpAjBfTECWarW3d3A",
+  },
+  Object {
+    "_id": "5843c579b07a244d5aab0d1c",
+    "aggScore": 1793.1,
+    "box": "https://res.cloudinary.com/agg/image/upload/v1586458537/kcvbo1vvpm0uxkfyp2ga.png",
+    "createdAt": 1480836473,
+    "isPublic": true,
+    "logo": "https://athletes.gg/images/games/logo/super-smash-bros-for-melee.jpg",
+    "name": "Super Smash Bros. Melee",
+    "reddit": Array [
+      Object {
+        "flairs": Array [
+          "All",
+          "Melee",
+        ],
+        "subreddit": "smashbros",
+      },
+    ],
+    "slug": "super-smash-bros-melee",
+    "smashggId": 1,
+    "twitchId": "16282",
+    "updatedAt": 1588704303,
+    "youtubeId": "UCM1fPpzWUd3K8HmPwVqhMRQ",
+  },
+  Object {
+    "_id": "5b69fbe91fe1a70015fce558",
+    "aggScore": 1055.5,
+    "box": "https://res.cloudinary.com/agg/image/upload/v1586458537/cmwpvukwgog4fxkqh8fn.jpg",
+    "createdAt": 1533672425,
+    "isPublic": true,
+    "name": "Dragon Ball FighterZ",
+    "reddit": Array [
+      Object {
+        "subreddit": "dbfz",
+      },
+      Object {
+        "subreddit": "dragonballfighterz",
+      },
+    ],
+    "slug": "dragon-ball-fighterz",
+    "smashggId": 287,
+    "twitchId": "497385",
+    "updatedAt": 1588704303,
+    "youtubeId": "UCHSZjaSxryA_c0GWOoBURnw",
+  },
+  Object {
+    "_id": "5b7d06c745e38b0015b24356",
+    "aggScore": 4941.2,
+    "box": "https://res.cloudinary.com/agg/image/upload/v1586458537/ug0h9sstyr6fiht47ltw.jpg",
+    "cover": "https://res.cloudinary.com/agg/image/upload/v1542210694/ultimate_arnkhb.jpg",
+    "createdAt": 1534920391,
+    "isPublic": true,
+    "name": "Super Smash Bros. Ultimate",
+    "reddit": Array [
+      Object {
+        "flairs": Array [
+          "All",
+          "Ultimate",
+        ],
+        "subreddit": "smashbros",
+      },
+      Object {
+        "subreddit": "smashbrosultimate",
+      },
+    ],
+    "slug": "super-smash-bros-ultimate",
+    "smashggId": 1386,
+    "twitchId": "504461",
+    "updatedAt": 1588704303,
+    "youtubeId": "UCGHhnt8FleLuVkc3egVZv-g",
+  },
+  Object {
+    "_id": "5b836d1a51c755001581a56f",
+    "aggScore": 256.5,
+    "box": "https://res.cloudinary.com/agg/image/upload/v1586458537/urkot2rnwk3cjcckfaiy.jpg",
+    "createdAt": 1535339802,
+    "isPublic": true,
+    "name": "Super Smash Bros. Brawl",
+    "reddit": Array [
+      Object {
+        "flairs": Array [
+          "All",
+          "Brawl",
+        ],
+        "subreddit": "smashbros",
+      },
+    ],
+    "slug": "super-smash-bros-brawl",
+    "smashggId": 5,
+    "twitchId": "18833",
+    "updatedAt": 1588704303,
+    "youtubeId": "UCa_0-KeDHC4Rb09Yzcrn3Jw",
+  },
+]
+`;
+
 exports[`Client should get 5 users 1`] = `
 Array [
   Object {
@@ -256,6 +377,35 @@ My name is Gonzalo, better known as ZeRo. I play Smash Bros competitively for a 
     "verifyToken": null,
   },
 ]
+`;
+
+exports[`Client should get Smash Ultimate 1`] = `
+Object {
+  "_id": "5b7d06c745e38b0015b24356",
+  "aggScore": 4941.2,
+  "box": "https://res.cloudinary.com/agg/image/upload/v1586458537/ug0h9sstyr6fiht47ltw.jpg",
+  "cover": "https://res.cloudinary.com/agg/image/upload/v1542210694/ultimate_arnkhb.jpg",
+  "createdAt": 1534920391,
+  "isPublic": true,
+  "name": "Super Smash Bros. Ultimate",
+  "reddit": Array [
+    Object {
+      "flairs": Array [
+        "All",
+        "Ultimate",
+      ],
+      "subreddit": "smashbros",
+    },
+    Object {
+      "subreddit": "smashbrosultimate",
+    },
+  ],
+  "slug": "super-smash-bros-ultimate",
+  "smashggId": 1386,
+  "twitchId": "504461",
+  "updatedAt": 1588704303,
+  "youtubeId": "UCGHhnt8FleLuVkc3egVZv-g",
+}
 `;
 
 exports[`Client should get suitupalex 1`] = `

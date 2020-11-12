@@ -14,7 +14,8 @@ describe('Client', () => {
   })
 
   it('should get suitupalex', async () => {
-    const user: Record<string, unknown> = await client.getUser('5843c579b07a244d5aab0d30')
+    const user: Record<string, unknown> =
+      await client.getUser('5843c579b07a244d5aab0d30')
 
     expect(user).toMatchSnapshot()
   })
@@ -25,5 +26,20 @@ describe('Client', () => {
     })
 
     expect(users).toMatchSnapshot()
+  })
+
+  it('should get Smash Ultimate', async () => {
+    const game: Record<string, unknown> =
+      await client.getGame('5b7d06c745e38b0015b24356')
+
+    expect(game).toMatchSnapshot()
+  })
+
+  it('should get 5 games', async () => {
+    const games: Record<string, unknown>[] = await client.getGames({
+      $limit: 5,
+    })
+
+    expect(games).toMatchSnapshot()
   })
 })
