@@ -42,4 +42,19 @@ describe('Client', () => {
 
     expect(games).toMatchSnapshot()
   })
+
+  it('should get ZSS', async () => {
+    const character: Record<string, unknown> =
+      await client.getCharacter('5bf8d509d0306a00174051e1')
+
+    expect(character).toMatchSnapshot()
+  })
+
+  it('should get 5 characters', async () => {
+    const characters: Record<string, unknown>[] = await client.getCharacters({
+      $limit: 5,
+    })
+
+    expect(characters).toMatchSnapshot()
+  })
 })

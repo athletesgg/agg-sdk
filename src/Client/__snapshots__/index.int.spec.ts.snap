@@ -1,5 +1,185 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Client should get 5 characters 1`] = `
+Array [
+  Object {
+    "_id": "5bf8d1c6d0306a0017404d2c",
+    "aggScore": 1.2,
+    "card": "https://res.cloudinary.com/agg/image/upload/v1567190219/bowser_v1s2ge.png",
+    "createdAt": 1543033286,
+    "game": Object {
+      "_id": "5843c579b07a244d5aab0d1c",
+      "aggScore": 1793.1,
+      "box": "https://res.cloudinary.com/agg/image/upload/v1586458537/kcvbo1vvpm0uxkfyp2ga.png",
+      "createdAt": 1480836473,
+      "isPublic": true,
+      "logo": "https://athletes.gg/images/games/logo/super-smash-bros-for-melee.jpg",
+      "name": "Super Smash Bros. Melee",
+      "reddit": Array [
+        Object {
+          "flairs": Array [
+            "All",
+            "Melee",
+          ],
+          "subreddit": "smashbros",
+        },
+      ],
+      "slug": "super-smash-bros-melee",
+      "smashggId": 1,
+      "twitchId": "16282",
+      "updatedAt": 1588704303,
+      "youtubeId": "UCM1fPpzWUd3K8HmPwVqhMRQ",
+    },
+    "name": "Bowser",
+    "slug": "bowser",
+    "smashggId": 1,
+    "stock": "https://images.smash.gg/images/character/1/image-e037c945926ed3c455e6f3844dd2c4c3.png",
+    "thumbnail": "https://images.smash.gg/images/character/1/image-f7fb27e0d7e18cae4a75e61673b8bc57.png",
+    "updatedAt": 1588703939,
+  },
+  Object {
+    "_id": "5bf8d1c7d0306a0017404d2d",
+    "aggScore": 276.3,
+    "card": "https://res.cloudinary.com/agg/image/upload/v1567190210/captain-falcon_b4wfcs.png",
+    "createdAt": 1543033287,
+    "game": Object {
+      "_id": "5843c579b07a244d5aab0d1c",
+      "aggScore": 1793.1,
+      "box": "https://res.cloudinary.com/agg/image/upload/v1586458537/kcvbo1vvpm0uxkfyp2ga.png",
+      "createdAt": 1480836473,
+      "isPublic": true,
+      "logo": "https://athletes.gg/images/games/logo/super-smash-bros-for-melee.jpg",
+      "name": "Super Smash Bros. Melee",
+      "reddit": Array [
+        Object {
+          "flairs": Array [
+            "All",
+            "Melee",
+          ],
+          "subreddit": "smashbros",
+        },
+      ],
+      "slug": "super-smash-bros-melee",
+      "smashggId": 1,
+      "twitchId": "16282",
+      "updatedAt": 1588704303,
+      "youtubeId": "UCM1fPpzWUd3K8HmPwVqhMRQ",
+    },
+    "name": "Captain Falcon",
+    "slug": "captain-falcon",
+    "smashggId": 2,
+    "stock": "https://images.smash.gg/images/character/2/image-b3c33a1a600b53fd7d0750d38f37e665.png",
+    "thumbnail": "https://images.smash.gg/images/character/2/image-91a9e06ab48ffc4fb21f1933db6d7d5e.png",
+    "updatedAt": 1588703939,
+  },
+  Object {
+    "_id": "5bf8d1c7d0306a0017404d2e",
+    "aggScore": 11.6,
+    "card": "https://res.cloudinary.com/agg/image/upload/v1567190255/dk_uunj4u.png",
+    "createdAt": 1543033287,
+    "game": Object {
+      "_id": "5843c579b07a244d5aab0d1c",
+      "aggScore": 1793.1,
+      "box": "https://res.cloudinary.com/agg/image/upload/v1586458537/kcvbo1vvpm0uxkfyp2ga.png",
+      "createdAt": 1480836473,
+      "isPublic": true,
+      "logo": "https://athletes.gg/images/games/logo/super-smash-bros-for-melee.jpg",
+      "name": "Super Smash Bros. Melee",
+      "reddit": Array [
+        Object {
+          "flairs": Array [
+            "All",
+            "Melee",
+          ],
+          "subreddit": "smashbros",
+        },
+      ],
+      "slug": "super-smash-bros-melee",
+      "smashggId": 1,
+      "twitchId": "16282",
+      "updatedAt": 1588704303,
+      "youtubeId": "UCM1fPpzWUd3K8HmPwVqhMRQ",
+    },
+    "name": "Donkey Kong",
+    "slug": "donkey-kong",
+    "smashggId": 3,
+    "stock": "https://images.smash.gg/images/character/3/image-803995c0e10bc359ea6a7fb7a9f23e78.png",
+    "thumbnail": "https://images.smash.gg/images/character/3/image-0ef52996c57dd1aa93623ab8caa1cc4b.png",
+    "updatedAt": 1588703939,
+  },
+  Object {
+    "_id": "5bf8d1c8d0306a0017404d2f",
+    "aggScore": 40.7,
+    "card": "https://res.cloudinary.com/agg/image/upload/v1567190279/dr-mario_w5uqiy.png",
+    "createdAt": 1543033288,
+    "game": Object {
+      "_id": "5843c579b07a244d5aab0d1c",
+      "aggScore": 1793.1,
+      "box": "https://res.cloudinary.com/agg/image/upload/v1586458537/kcvbo1vvpm0uxkfyp2ga.png",
+      "createdAt": 1480836473,
+      "isPublic": true,
+      "logo": "https://athletes.gg/images/games/logo/super-smash-bros-for-melee.jpg",
+      "name": "Super Smash Bros. Melee",
+      "reddit": Array [
+        Object {
+          "flairs": Array [
+            "All",
+            "Melee",
+          ],
+          "subreddit": "smashbros",
+        },
+      ],
+      "slug": "super-smash-bros-melee",
+      "smashggId": 1,
+      "twitchId": "16282",
+      "updatedAt": 1588704303,
+      "youtubeId": "UCM1fPpzWUd3K8HmPwVqhMRQ",
+    },
+    "name": "Dr. Mario",
+    "slug": "dr-mario",
+    "smashggId": 4,
+    "stock": "https://images.smash.gg/images/character/4/image-afe3635350c115deca38e09e01adfce0.png",
+    "thumbnail": "https://images.smash.gg/images/character/4/image-a959aa6920dcd0f757e5a3ba82de6ffc.png",
+    "updatedAt": 1588703939,
+  },
+  Object {
+    "_id": "5bf8d1c9d0306a0017404d30",
+    "aggScore": 606.8,
+    "card": "https://res.cloudinary.com/agg/image/upload/v1567190267/falco_etausg.png",
+    "createdAt": 1543033289,
+    "game": Object {
+      "_id": "5843c579b07a244d5aab0d1c",
+      "aggScore": 1793.1,
+      "box": "https://res.cloudinary.com/agg/image/upload/v1586458537/kcvbo1vvpm0uxkfyp2ga.png",
+      "createdAt": 1480836473,
+      "isPublic": true,
+      "logo": "https://athletes.gg/images/games/logo/super-smash-bros-for-melee.jpg",
+      "name": "Super Smash Bros. Melee",
+      "reddit": Array [
+        Object {
+          "flairs": Array [
+            "All",
+            "Melee",
+          ],
+          "subreddit": "smashbros",
+        },
+      ],
+      "slug": "super-smash-bros-melee",
+      "smashggId": 1,
+      "twitchId": "16282",
+      "updatedAt": 1588704303,
+      "youtubeId": "UCM1fPpzWUd3K8HmPwVqhMRQ",
+    },
+    "name": "Falco",
+    "slug": "falco",
+    "smashggId": 5,
+    "stock": "https://images.smash.gg/images/character/5/image-325f30eee6631a6989a345e98da764e2.png",
+    "thumbnail": "https://images.smash.gg/images/character/5/image-af088a777207becd83801ff4a4eaaea7.png",
+    "updatedAt": 1588703939,
+  },
+]
+`;
+
 exports[`Client should get 5 games 1`] = `
 Array [
   Object {
@@ -405,6 +585,46 @@ Object {
   "twitchId": "504461",
   "updatedAt": 1588704303,
   "youtubeId": "UCGHhnt8FleLuVkc3egVZv-g",
+}
+`;
+
+exports[`Client should get ZSS 1`] = `
+Object {
+  "_id": "5bf8d509d0306a00174051e1",
+  "aggScore": 106.9,
+  "createdAt": 1543034121,
+  "game": Object {
+    "_id": "5b7d06c745e38b0015b24356",
+    "aggScore": 4941.2,
+    "box": "https://res.cloudinary.com/agg/image/upload/v1586458537/ug0h9sstyr6fiht47ltw.jpg",
+    "cover": "https://res.cloudinary.com/agg/image/upload/v1542210694/ultimate_arnkhb.jpg",
+    "createdAt": 1534920391,
+    "isPublic": true,
+    "name": "Super Smash Bros. Ultimate",
+    "reddit": Array [
+      Object {
+        "flairs": Array [
+          "All",
+          "Ultimate",
+        ],
+        "subreddit": "smashbros",
+      },
+      Object {
+        "subreddit": "smashbrosultimate",
+      },
+    ],
+    "slug": "super-smash-bros-ultimate",
+    "smashggId": 1386,
+    "twitchId": "504461",
+    "updatedAt": 1588704303,
+    "youtubeId": "UCGHhnt8FleLuVkc3egVZv-g",
+  },
+  "name": "Zero Suit Samus",
+  "slug": "zero-suit-samus",
+  "smashggId": 1341,
+  "stock": "https://images.smash.gg/images/character/1341/image-7c0c70110071ed9a863e712469118d10.png",
+  "thumbnail": "https://res.cloudinary.com/agg/image/upload/v1567190402/zss_fkrn0u.png",
+  "updatedAt": 1588703941,
 }
 `;
 
