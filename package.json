@@ -1,13 +1,13 @@
 {
-  "name": "@athletes.gg/agg-api",
+  "name": "@athletes.gg/agg-sdk",
   "version": "3.0.0-alpha.1",
-  "description": "The API client library for Athletes.gg.",
+  "description": "The SDK for Athletes.gg.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "git@github.com:athletesgg/agg-api",
+  "repository": "git@github.com:athletesgg/agg-sdk",
   "author": "Athletes.gg, Inc.",
   "license": "MIT",
   "private": false,

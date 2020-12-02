@@ -1,4 +1,4 @@
-# Athletes.gg API Client v3
+# Athletes.gg SDK v3
 
-[![CircleCI](https://circleci.com/gh/athletesgg/agg-api.svg?style=shield)](https://circleci.com/gh/athletesgg/agg-api)
-[![codecov](https://codecov.io/gh/athletesgg/agg-api/branch/master/graph/badge.svg)](https://codecov.io/gh/athletesgg/agg-api)
+[![CircleCI](https://circleci.com/gh/athletesgg/agg-sdk.svg?style=shield)](https://circleci.com/gh/athletesgg/agg-sdk)
+[![codecov](https://codecov.io/gh/athletesgg/agg-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/athletesgg/agg-sdk)
