@@ -8,6 +8,10 @@ const client = new Client({
 })
 
 describe('Client', () => {
+  afterAll(() => {
+    client.disconnect()
+  })
+
   it('should initialize a basic client', () => {
     expect(client.url).toEqual(url)
     expect(client).toMatchSnapshot()

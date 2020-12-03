@@ -29,7 +29,6 @@ jobs:
             --reporters="default"
             --reporters="jest-junit"
             --coverage
-            --detectOpenHandles
           environment:
             JEST_JUNIT_OUTPUT_DIR: "./reports/junit"
           when: always

@@ -83,6 +83,10 @@ class Client implements ClientOptions {
     return this.app.service(service) as Service<any>
   }
 
+  public disconnect() {
+    this.socket.disconnect()
+  }
+
   public get timeout(): number {
     return this._timeout
   }
