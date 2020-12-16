@@ -11,22 +11,32 @@ import authentication, {
   Storage,
   defaultStorage,
 } from '@feathersjs/authentication-client'
+import _ from 'lodash'
 import socketio from '@feathersjs/socketio-client'
 import io from 'socket.io-client'
 
 interface ClientOptions {
+  pageLimit?: number
+  pageSizeLimit?: number
   storage?: Storage
   timeout?: number
+  tryLimit?: number
   url: string
 }
 
 class Client implements ClientOptions {
+  static DEFAULT_PAGE_LIMIT = 5
+  static DEFAULT_PAGE_SIZE_LIMIT = 50
   static DEFAULT_TIMEOUT = 3000
+  static DEFAULT_TRY_LIMIT = 3
 
   readonly app: Application
   readonly socket: SocketIOClient.Socket
 
+  private _pageLimit: number
+  private _pageSizeLimit: number
   private _timeout: number
+  private _tryLimit: number
   private _url: string
 
   public authManagement: Service<any>
@@ -45,14 +55,20 @@ class Client implements ClientOptions {
 
   public constructor(options: ClientOptions) {
     const {
+      pageLimit = Client.DEFAULT_PAGE_LIMIT,
+      pageSizeLimit = Client.DEFAULT_PAGE_SIZE_LIMIT,
       storage = defaultStorage,
       timeout = Client.DEFAULT_TIMEOUT,
+      tryLimit = Client.DEFAULT_TRY_LIMIT,
       url,
     } : ClientOptions = options
 
+    this._pageLimit = pageLimit
+    this._pageSizeLimit = pageSizeLimit
     this._url = url
-    this.socket = io(this._url)
     this._timeout = timeout
+    this._tryLimit = tryLimit
+    this.socket = io(this._url)
 
     this.app = feathers()
     this.app
@@ -148,6 +164,62 @@ class Client implements ClientOptions {
     return this.users.find({
       query,
     }) as Promise<Record<string, unknown>[]>
+  }
+
+  // MACROS
+  public async findPaginate(
+    service: string,
+    buildQuery: (lastItem?: Record<string, unknown>) => Query,
+    job: (data?: Record<string, unknown>[]) => Promise<void> | void,
+    pageLimit: number = this._pageLimit,
+    lastItem?: Record<string, unknown>,
+    tries = 0,
+    pages = 1,
+  ): Promise<void> {
+    const query: Query = {
+      $limit: this._pageSizeLimit,
+      ...buildQuery(lastItem),
+    } as Query
+
+    try {
+      const data: Record<string, unknown>[] = await this.getService(service).find({
+        query,
+      }) as Record<string, unknown>[]
+
+      await job(data)
+
+      if (data.length < this._pageSizeLimit) {
+        return
+      }
+
+      if (pages >= pageLimit) {
+        return
+      }
+
+      return this.findPaginate(
+        service,
+        buildQuery,
+        job,
+        pageLimit,
+        _.last(data) as Record<string, unknown>,
+        0,
+        pages + 1,
+      )
+    } catch (error) {
+      if (tries >= this._tryLimit) {
+        throw error
+      }
+
+      return this.findPaginate(
+        service,
+        buildQuery,
+        job,
+        pageLimit,
+        lastItem,
+        tries + 1,
+        pages,
+      )
+    }
   }
 }
 
