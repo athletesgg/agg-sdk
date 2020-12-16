@@ -83,7 +83,7 @@ class Client implements ClientOptions {
     return this.app.service(service) as Service<any>
   }
 
-  public disconnect() {
+  public disconnect(): void {
     this.socket.disconnect()
   }
 
