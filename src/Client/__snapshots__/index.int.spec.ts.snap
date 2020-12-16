@@ -7090,7 +7090,7 @@ Client {
     },
     "setup": [Function],
     "use": [Function],
-    "version": "4.5.10",
+    "version": "4.5.11",
   },
   "authManagement": Object {
     "addListener": [Function],
