@@ -8,7 +8,10 @@ exports[`Client should fail to logout (timeout) 1`] = `"Timeout of 3000ms exceed
 
 exports[`Client should initialize a basic client 1`] = `
 Client {
+  "_pageLimit": 5,
+  "_pageSizeLimit": 50,
   "_timeout": 3000,
+  "_tryLimit": 3,
   "_url": "https://api-v3.athletes.gg",
   "activities": Object {
     "addListener": [Function],

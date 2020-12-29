@@ -76,4 +76,51 @@ describe('Client', () => {
 
     expect(matches).toMatchSnapshot()
   })
+
+  it('should get suitupalex (paginated)', async () => {
+    await client.findPaginate(
+      'users',
+      () => ({
+        _id: '5843c579b07a244d5aab0d30',
+      }),
+      (data?: Record<string, unknown>[]): void => {
+        expect(data).toMatchSnapshot()
+      },
+    )
+  })
+
+  it('should get 250 users (paginated)', async () => {
+    let count = 0
+
+    await client.findPaginate(
+      'users',
+      (lastItem) => {
+        if (!lastItem) {
+          return {}
+        }
+
+        return ({
+          _id: {
+            $gt: lastItem._id,
+          },
+        })
+      },
+      (data?: Record<string, unknown>[]): void => {
+        expect(data).toMatchSnapshot()
+        count += data ? data.length : 0
+      },
+    )
+
+    expect(count).toEqual(250)
+  })
+
+  it ('should fail to get users (paginated)', async () => {
+    await expect(client.findPaginate(
+      'users',
+      () => ({}),
+      () => {
+        throw(new Error('Long story short it was a bad time'))
+      },
+    )).rejects.toThrowErrorMatchingSnapshot()
+  })
 })
