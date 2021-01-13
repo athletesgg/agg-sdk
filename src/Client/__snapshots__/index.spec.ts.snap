@@ -1340,6 +1340,7 @@ Client {
     "timeout": 3000,
     "update": [Function],
   },
+  "authenticate": [Function],
   "characters": Object {
     "addListener": [Function],
     "connection": SocketMock {

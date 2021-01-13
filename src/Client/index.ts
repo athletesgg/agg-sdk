@@ -39,6 +39,7 @@ class Client implements ClientOptions {
   private _tryLimit: number
   private _url: string
 
+  public authenticate
   public authManagement: Service<any>
   public activities: Service<any>
   public characters: Service<any>
@@ -80,6 +81,7 @@ class Client implements ClientOptions {
         storage,
       }))
 
+    this.authenticate = this.app.authenticate
     this.authManagement = this.getService('authManagement')
     this.activities = this.getService('activities')
     this.characters = this.getService('characters')
@@ -126,12 +128,54 @@ class Client implements ClientOptions {
   }
 
   // GET
+  public async getActivity(id: string): Promise<Record<string, unknown>> {
+    return this.activities.get(id) as Promise<Record<string, unknown>>
+  }
+
+  public async getActivities(query: Query): Promise<Record<string, unknown>[]> {
+    return this.activities.find({
+      query,
+    }) as Promise<Record<string, unknown>[]>
+  }
+
   public async getCharacter(id: string): Promise<Record<string, unknown>> {
     return this.characters.get(id) as Promise<Record<string, unknown>>
   }
 
   public async getCharacters(query: Query): Promise<Record<string, unknown>[]> {
     return this.characters.find({
+      query,
+    }) as Promise<Record<string, unknown>[]>
+  }
+
+  public async getEvent(id: string): Promise<Record<string, unknown>> {
+    return this.events.get(id) as Promise<Record<string, unknown>>
+  }
+
+  public async getEventBySlug(slug: string): Promise<Record<string, unknown>> {
+    const data = await this.getEvents({
+      slug,
+    })
+
+    const [
+      event,
+    ] = data
+
+    return event
+  }
+
+  public async getEvents(query: Query): Promise<Record<string, unknown>[]> {
+    return this.events.find({
+      query,
+    }) as Promise<Record<string, unknown>[]>
+  }
+
+  public async getFollower(id: string): Promise<Record<string, unknown>> {
+    return this.followers.get(id) as Promise<Record<string, unknown>>
+  }
+
+  public async getFollowers(query: Query): Promise<Record<string, unknown>[]> {
+    return this.followers.find({
       query,
     }) as Promise<Record<string, unknown>[]>
   }
@@ -156,8 +200,50 @@ class Client implements ClientOptions {
     }) as Promise<Record<string, unknown>[]>
   }
 
+  public async getNotification(id: string): Promise<Record<string, unknown>> {
+    return this.notifications.get(id) as Promise<Record<string, unknown>>
+  }
+
+  public async getNotifications(query: Query): Promise<Record<string, unknown>[]> {
+    return this.notifications.find({
+      query,
+    }) as Promise<Record<string, unknown>[]>
+  }
+
+  public async getPlacing(id: string): Promise<Record<string, unknown>> {
+    return this.placings.get(id) as Promise<Record<string, unknown>>
+  }
+
+  public async getPlacings(query: Query): Promise<Record<string, unknown>[]> {
+    return this.placings.find({
+      query,
+    }) as Promise<Record<string, unknown>[]>
+  }
+
+  public async getSchedule(id: string): Promise<Record<string, unknown>> {
+    return this.schedules.get(id) as Promise<Record<string, unknown>>
+  }
+
+  public async getSchedules(query: Query): Promise<Record<string, unknown>[]> {
+    return this.schedules.find({
+      query,
+    }) as Promise<Record<string, unknown>[]>
+  }
+
   public async getUser(id: string): Promise<Record<string, unknown>> {
     return this.users.get(id) as Promise<Record<string, unknown>>
+  }
+
+  public async getUserBySlug(slug: string): Promise<Record<string, unknown>> {
+    const data = await this.getUsers({
+      slug,
+    })
+
+    const [
+      user,
+    ] = data
+
+    return user
   }
 
   public async getUsers(query: Query): Promise<Record<string, unknown>[]> {
